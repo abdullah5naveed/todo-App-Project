@@ -5,7 +5,7 @@
 {% if user.is_authenticated %}
 
     <h3>login as: {{ user.username}}</h3>
-    <a href="#"> LogOut </a>
+    <a href="{% url 'logoutuser' %}"> LogOut </a>
 
 {% else %}
     <a href="#"> Login </a>

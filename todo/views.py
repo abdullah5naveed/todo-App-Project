@@ -4,6 +4,13 @@ from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout
 
+
+def home(request):
+    return render(request, 'todo/home.html')
+
+
+
+
 def signupuser(request):
     if request.method == 'GET':
         return render(request, 'todo/signupuser.html', {'form':UserCreationForm()})
@@ -25,7 +32,8 @@ def signupuser(request):
 
 def logoutuser(request):
     if request.method == 'POST':
-        pass
+        logout(request)
+        return redirect(request, 'todo/home.html')
 
 
 

@@ -11,8 +11,8 @@
     </form>
 
 {% else %}
-    <a href="#"> Login </a>
-    <a href="#"> SignUp </a>
+    <a href="{% url 'loginuser' %}"> Login </a>
+    <a href="{% url 'signupuser' %}"> SignUp </a>
 {% endif %}
 
 {% block content %}

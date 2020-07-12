@@ -4,7 +4,7 @@
 {% block content %}
 <br>
 
-Current Pages after login
+<h1>Complete ToDos</h1>
     <ul>
         {% for todo in todos %}
 
@@ -18,7 +18,7 @@ Current Pages after login
                 {% endif %}
             </a>
         </li>
-        
+        {{ todo.datecompleted|date:'M j Y H:i' }}
 
         {% endfor %}
     </ul>

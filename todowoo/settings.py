@@ -23,9 +23,9 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'p7mmj6lfgj1(5uk^!z-h1b!5se^^8wh07ykn!nd%2*#ik&6avw'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['www.Abdullahtodoapp.pythonanywhere.com']
 
 
 # Application definition
@@ -122,3 +122,9 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 LOGIN_URL = '/login'
+
+
+try:
+    from .local_settings import *
+except ImportError:
+    print("You are in production mode, there is no file like that")
